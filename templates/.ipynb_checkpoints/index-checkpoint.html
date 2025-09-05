@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Live Chat Widget</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="demo-content">
+        <h1>Professional Live Chat Widget</h1>
+        <p>Experience our modern chat widget with smooth animations and professional design. Click the chat button in the bottom-right corner to start a conversation!</p>
+        
+        <div class="demo-features">
+            <div class="feature-card">
+                <i class="fas fa-comments"></i>
+                <h3>Real-time Chat</h3>
+                <p>Instant messaging with typing indicators and read receipts</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Fully Responsive</h3>
+                <p>Works perfectly on desktop, tablet, and mobile devices</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-robot"></i>
+                <h3>AI-Powered</h3>
+                <p>Smart responses powered by AI with markdown support</p>
+            </div>
+        </div>
+    </div>
+    <div class="chat-widget">
+        <button class="chat-button" onclick="toggleChat()">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-badge" id="chatBadge">1</span>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="agent-info">
+                    <div class="agent-avatar">
+                        <i class="fas fa-headset"></i>
+                        <div class="agent-status" id="agentStatus"></div>
+                    </div>
+                    <div class="agent-details">
+                        <h3>Support Team</h3>
+                        <div class="agent-status-text">
+                            <span id="agentStatusText">Online</span>
+                            <span>•</span>
+                            <span>Typically replies in minutes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" id="minimizeBtn" onclick="toggleMinimize()">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="action-btn" onclick="toggleChat()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chat-body">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Content will be dynamically added -->
+                </div>
+                
+                <div class="typing-indicator" id="typingIndicator">
+                    <span style="font-size: 13px; color: var(--text-light);">Agent is typing</span>
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="fallback-message" id="fallbackMessage">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Agent Offline</h4>
+                    <p>Sorry, our agents are currently unavailable. Please contact us on WhatsApp for instant support.</p>
+                    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="chat-footer" id="chatFooter" style="display: none;">
+                <div class="input-container">
+                    <textarea 
+                        type="text" 
+                        class="message-input" 
+                        id="messageInput" 
+                        placeholder="Type your message..."
+                        rows="1"
+                        onkeypress="handleKeyPress(event)"
+                        oninput="autoResize(this)"
+                    ></textarea>
+                    <button class="send-button" onclick="sendMessage()" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

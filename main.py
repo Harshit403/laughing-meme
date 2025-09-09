@@ -9,6 +9,8 @@ import time
 from typing import List, Dict, Optional
 from vector_store import OptimizedVectorStore, generate_answer, run_async_task
 import uvicorn
+from vector_store import EMBEDDING_DIMENSION   # already == 1024
+vector_store = OptimizedVectorStore(EMBEDDING_DIMENSION)
 
 # Initialize FastAPI app
 app = FastAPI(title="Live Chat Widget API", version="1.0.0")
@@ -30,7 +32,7 @@ templates = Jinja2Templates(directory="templates")
 os.makedirs("chats", exist_ok=True)
 
 # Initialize vector store
-vector_store = OptimizedVectorStore(384)  # EMBEDDING_DIMENSION
+#vector_store = OptimizedVectorStore(384)  # EMBEDDING_DIMENSION
 
 # Load documents from document.txt
 def load_documents():

@@ -47,7 +47,11 @@ def load_documents():
     except FileNotFoundError:
         print("document.txt not found. Vector store will be empty.")
     except Exception as e:
-        print(f"Error loading documents: {e}")
+        import traceback
+        traceback.print_exc()      # full stack-trace to console
+
+    #except Exception as e:
+   #     print(f"Error loading documents: {e}")
 
 # Load documents at startup
 load_documents()

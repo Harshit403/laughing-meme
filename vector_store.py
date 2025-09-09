@@ -38,6 +38,7 @@ JINA_API_URL  = "https://api.jina.ai/v1/embeddings"
 JINA_MODEL    = "jina-embeddings-v3"
 JINA_TASK     = "retrieval.query"
 EMBEDDING_DIMENSION = 1024          # jina-embeddings-v3 output size
+QUANTIZE_EMBEDDINGS = True          # or False if you don’t want quantization
 
 Z_AI_API_KEY  = os.getenv("Z_AI_API_KEY") or "ebc1621fb09741cba9c82e06b9e94ed8.keDzS2msXG0BOvY2"
 Z_AI_BASE_URL = "https://api.z.ai/api/paas/v4/"
